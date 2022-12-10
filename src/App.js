@@ -9,25 +9,17 @@ const App = () => {
     
     const user = useSelector(state => state.auth.user)
     const showRoutes = useRoutes(routes)
-    const [redirect, setRedirect] = useState(false)
-
-    useEffect(() => { //user'ın gelmesini 2 saniye bekliyor gelmez ise login sayfasına
-      let timeout = setTimeout(() =>{
-        setRedirect(true)
-      },2000)
-        return () =>{
-            clearTimeout(timeout)
-        }
-    }, [])
     
-    
-    if(!user && !redirect){
+    if(user === null){
         return(
             <Loader></Loader>
         )
     }
+
+    console.log(user.fullName)
     return( //user varsa döndürüyor
         <>
+            {/* <pre>{JSON.stringify(user, null, 2)}</pre>  kullanıcı datası kontrol*/}
             <Toaster position='top-right'></Toaster>
             {showRoutes}
         </>
