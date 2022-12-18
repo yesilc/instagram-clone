@@ -4,13 +4,13 @@ import Button from "../../components/Button";
 import Separator from "../../components/Separator";
 import {AiFillFacebook} from "react-icons/ai";
 import {Navigate, useLocation, Link} from "react-router-dom"
-import {login} from "../../firebase";
+import {login} from "../../firebase.js";
 import {Formik, Form} from "formik";
 import {LoginSchema} from "../../validation/login-schema";
 import {useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
 
-const Login =() => {
+export default function Login() {
 
 	const user = useSelector(state => state.auth.user)
 	const location = useLocation()
@@ -103,7 +103,7 @@ const Login =() => {
 				</div>
 
 				<div className="bg-white border p-4 text-sm text-center">
-					Don't have an account? <Link to="/auth/register" className="font-semibold text-brand">Sign up</Link>
+					Don't have an account? <Link to="/auth/register" className="font-semibold text-black">Sign up</Link>
 				</div>
 
 			</div>
@@ -111,5 +111,3 @@ const Login =() => {
 		</div>
 	);
 }
-
-export default Login

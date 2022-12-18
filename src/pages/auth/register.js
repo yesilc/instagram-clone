@@ -1,10 +1,9 @@
-
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Separator from "../../components/Separator";
 import {AiFillFacebook} from "react-icons/ai";
 import {useNavigate, useLocation, Link} from "react-router-dom"
-import {login ,register} from "../../firebase";
+import {register} from "../../firebase.js";
 import {Formik, Form} from "formik";
 import {RegisterSchema} from "../../validation/register-schema";
 import {Helmet} from "react-helmet";
